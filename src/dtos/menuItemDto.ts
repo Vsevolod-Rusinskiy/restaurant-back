@@ -1,51 +1,48 @@
-import { IsString, IsNumber, IsOptional, Length, Min } from 'class-validator';
+import { IsString, IsNumber, IsOptional, Length, Min } from 'class-validator'
 
 export class CreateMenuItemDto {
     @IsString()
     @Length(2, 50)
-    name!: string;
+    name!: string
 
     @IsString()
     @Length(3, 300)
-    description!: string;
-
+    description!: string
 
     @IsNumber()
     @Min(0)
-    price!: number;
+    price!: number
 
     @IsNumber()
     @Min(1)
-    categoryId!: number;
-
+    categoryId!: number
 
     @IsString()
     @IsOptional()
-    imageUrl?: string;
+    imageUrl?: string
 }
-
 
 export class UpdateMenuItemDto {
     @IsString()
     @Length(2, 50)
     @IsOptional()
-    name?: string;
+    name?: string
 
     @IsString()
     @Length(3, 300)
     @IsOptional()
-    description?: string;
+    description?: string
 
     @IsNumber()
     @Min(0)
     @IsOptional()
-    price?: number;
+    price?: number
 
     @IsNumber()
     @IsOptional()
-    categoryId?: number;
+    categoryId?: number
 
     @IsString()
     @IsOptional()
-    imageUrl?: string;
+    imageUrl?: string
 }
