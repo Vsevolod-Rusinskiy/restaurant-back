@@ -1,13 +1,12 @@
-import {Router} from 'express';
-import validateDto from '../middleware/validateDtoMiddleware';
-import {UserDto} from '../dtos/userDto';
+import { Router } from 'express'
+import validateDto from '../middleware/validateDtoMiddleware'
+import { UserDto } from '../dtos/userDto'
 
-import {login, register} from '../controllers/authController';
+import { login, register } from '../controllers/authController'
 
-const router = Router();
+const router = Router()
 
-router.post('/register', validateDto(UserDto), register);
-router.post('/login', validateDto(UserDto), login);
+router.post('/register', validateDto(UserDto), register)
+router.post('/login', validateDto(UserDto), login)
 
-
-export default router;
+export default router
